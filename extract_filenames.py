@@ -78,10 +78,16 @@ def process_items():
         abspath_folders = [str(f.resolve()) for f in folders]
         
         # 5. 生成BallonsTranslator命令（仅针对文件）
-        if files:
+        if files or folders:
+            dirs_to_execute = []
+            if abspath_files_no_ext:
+                dirs_to_execute.extend(abspath_files_no_ext)
+            if abspath_folders:
+                dirs_to_execute.extend(abspath_folders)
+            
             ballons_translator_cmd = (
                 "python.exe "
-                f'launch.py --headless --exec_dirs "{",".join(abspath_files_no_ext)},{",".join(abspath_folders)}"'
+                f'launch.py --headless --exec_dirs "{",".join(dirs_to_execute)}"'
             )
         else:
             ballons_translator_cmd = "无文件可处理"
