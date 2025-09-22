@@ -86,7 +86,7 @@ def process_items():
                 dirs_to_execute.extend(abspath_folders)
             
             ballons_translator_cmd = (
-                "python.exe "
+                "python"
                 f'launch.py --headless --exec_dirs "{",".join(dirs_to_execute)}"'
             )
         else:
@@ -111,7 +111,7 @@ def process_items():
 绝对路径（文件夹）：
 {",".join(abspath_folders) if folders else "无文件夹"}
 
-BallonsTranslator批处理命令（在ballontrans_pylibs_win根目录执行或自行修改为绝对路径）：
+BallonsTranslator批处理命令：
 {ballons_translator_cmd}"""
         
         # 7. 保存到文件（UTF-8编码确保支持中文）

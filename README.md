@@ -1,4 +1,4 @@
-# 程序使用说明
+# 脚本使用说明
 
 ## 前言
 
@@ -104,8 +104,8 @@ E:\目标文件夹\压缩文件,E:\目标文件夹\图像,E:\目标文件夹\文
 绝对路径（文件夹）：
 E:\目标文件夹\文件夹
 
-BallonsTranslator批处理命令（在ballontrans_pylibs_win根目录执行或自行修改为绝对路径）：
-python.exe launch.py --headless --exec_dirs "E:\目标文件夹\压缩文件,E:\目标文件夹\图像,E:\目标文件夹\文档1,E:\目标文件夹\文档2,E:\目标文件夹\文件夹"
+BallonsTranslator批处理命令：
+python launch.py --headless --exec_dirs "E:\目标文件夹\压缩文件,E:\目标文件夹\图像,E:\目标文件夹\文档1,E:\目标文件夹\文档2,E:\目标文件夹\文件夹"
 --------------------------------------------------------------------------------------
 
 结果已保存到： E:\目标文件夹\extract_filenames_output.txt
@@ -119,15 +119,15 @@ Results have been saved to: E:\目标文件夹\extract_filenames_output.txt
 
 ## BallonsTranslator 集成功能
 
-程序集成 [BallonsTranslator](https://github.com/dmMaze/BallonsTranslator) 批处理命令行生成功能，可以直接生成用于 BallonsTranslator 的命令行：
+在 [BallonsTranslator](https://github.com/dmMaze/BallonsTranslator) 的官方说明文档中提供了命令行模式的批量翻译选项，程序集成 [BallonsTranslator](https://github.com/dmMaze/BallonsTranslator) 批处理命令行生成功能，可以直接生成用于 BallonsTranslator 的命令行：
 
 ```text
-python.exe launch.py --headless --exec_dirs "绝对路径（无后缀）"
+python launch.py --headless --exec_dirs "[DIR_1],[DIR_2]..."
 ```
 
 适用于批量处理图像翻译任务，可以直接复制生成的命令行到终端运行。
 
-需在 BallonsTranslator 根目录下的 ballontrans_pylibs_win 目录执行该命令行，或自行将执行路径修改为 ballontrans_pylibs_win 目录下 python.exe 程序的绝对路径。
+需在 BallonsTranslator 根目录下执行该命令行，或自行将 launch.py 的执行路径修改为 BallonsTranslator 目录下 launch.py 程序的绝对路径。
 
 ## 注意事项
 
@@ -137,14 +137,6 @@ python.exe launch.py --headless --exec_dirs "绝对路径（无后缀）"
 
 ## 故障排除
 
-**[提示]"当前文件夹中没有找到任何文件或文件夹"**：
-
-检查程序是否放在正确的位置，确认目标文件夹中确实存在文件
-
-**[提示]程序无法运行**：
-
-尝试以管理员权限运行 cmd 终端或检查文件的权限
-
-**[提示]python : 无法将“python”项识别为 cmdlet、函数、脚本文件或可运行程序的名称...**
-
-确保 python 被正确地安装并将 path 添加到环境变量中
+- **提示"当前文件夹中没有找到任何文件或文件夹"**：检查程序是否放在正确的位置，确认目标文件夹中确实存在文件
+- **程序无法运行**：尝试以管理员权限运行 cmd 终端或检查文件的权限
+- **python : 无法将“python”项识别为 cmdlet、函数、脚本文件或可运行程序的名称...**：确保 python 被正确地安装并将 path 添加到环境变量中
