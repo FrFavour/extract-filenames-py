@@ -86,7 +86,7 @@ def process_items():
                 dirs_to_execute.extend(abspath_folders)
             
             ballons_translator_cmd = (
-                "python"
+                "python "
                 f'launch.py --headless --exec_dirs "{",".join(dirs_to_execute)}"'
             )
         else:
